@@ -1,71 +1,82 @@
-# Zora
+# Development Environment Settings
 
-A TypeScript project with GraphQL WebSocket support.
+This repository contains my personal development environment settings and configurations.
 
-## Prerequisites
+## Contents
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
-- VS Code (recommended)
+### VS Code Settings
+- Personal editor preferences
+- Terminal settings
+- Workbench settings
+- Git settings
+- TypeScript settings
 
-## Installation
+### TypeScript Configuration
+- Base TypeScript configuration template
+- Common compiler options
+- Path aliases setup
 
-```bash
-# Install dependencies
-npm install
+## Usage
 
-# Set up Git hooks
-npm run prepare
-```
-
-## VS Code Setup
-
-This project includes VS Code workspace settings for optimal development experience. To get started:
-
-1. Install the recommended VS Code extensions:
+### VS Code Settings
+1. Copy the contents of `vscode/settings.json` to your VS Code user settings
+2. Install recommended extensions:
    ```bash
    code --install-extension dbaeumer.vscode-eslint
    code --install-extension esbenp.prettier-vscode
    code --install-extension EditorConfig.EditorConfig
    code --install-extension ms-vscode.vscode-typescript-next
+   code --install-extension PKief.material-icon-theme
    ```
 
-2. The workspace includes:
-   - Editor settings for consistent formatting
-   - TypeScript configuration
-   - ESLint integration
-   - Debug configurations
-   - File exclusions
+### TypeScript Configuration
+1. Copy `typescript/tsconfig.base.json` to your project
+2. Extend it in your project's `tsconfig.json`:
+   ```json
+   {
+     "extends": "./tsconfig.base.json",
+     "compilerOptions": {
+       // Project-specific options
+     }
+   }
+   ```
 
-3. Personal VS Code settings (like font preferences) should be configured in your user settings.
+## Setting Up a New Machine
 
-## Available Scripts
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Asukarelsa/dev-settings.git
+   ```
 
-- `npm run build` - Compile TypeScript to JavaScript
-- `npm run dev` - Run the project in development mode with hot reload
-- `npm start` - Run the compiled project
-- `npm test` - Run tests
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
+2. Copy VS Code settings to the appropriate location:
+   ```bash
+   # For Linux
+   cp dev-settings/vscode/settings.json ~/.config/Code/User/settings.json
 
-## Project Structure
+   # For macOS
+   cp dev-settings/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
-```
-src/
-  ├── index.ts        # Entry point
-  └── ...            # Other source files
-dist/                # Compiled output
-```
+   # For Windows
+   cp dev-settings/vscode/settings.json %APPDATA%\Code\User\settings.json
+   ```
 
-## Development
+3. Install recommended VS Code extensions:
+   ```bash
+   code --install-extension dbaeumer.vscode-eslint
+   code --install-extension esbenp.prettier-vscode
+   code --install-extension EditorConfig.EditorConfig
+   code --install-extension ms-vscode.vscode-typescript-next
+   code --install-extension PKief.material-icon-theme
+   ```
 
-The project uses:
-- TypeScript for type safety
-- ESLint for code linting
-- Prettier for code formatting
-- Jest for testing
-- Husky for Git hooks
+4. For new TypeScript projects, copy the base configuration:
+   ```bash
+   cp dev-settings/typescript/tsconfig.base.json ./tsconfig.json
+   ```
+
+## Recommended Fonts
+- FiraCode Nerd Font
+- Cascadia Code
 
 ## License
-
 ISC
